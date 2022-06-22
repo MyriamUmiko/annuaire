@@ -37,7 +37,7 @@ public abstract class Personne {
 
 
 
-	//Methods ToString :
+	//Methods ToString : okay
 
 	@Override
 	public String toString() {
