@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class LanceurAnnuaire {
 
-	//test
+	//test2
 	
 	public static void main(String[] args) {
 		
