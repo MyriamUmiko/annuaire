@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.isika.cda18.annuaire.model.Noeud;
 import fr.isika.cda18.annuaire.model.Stagiaire;
 
 public class LanceurAnnuaire {
@@ -15,9 +16,11 @@ public class LanceurAnnuaire {
 	
 	public static void main(String[] args) {
 		List<Stagiaire> listeStagiaire=new ArrayList<>();
-//		Stagiaire stagiaire=new Stagiaire(null,null,0,null,0);
+
+
+		Noeud arbreBinaire = new Noeud(null);
 		
-		
+		//stocker les données dans la liste - pour la lecture du fichier STAGIAIRE.DON
 		try {
 			
 			//ouvre un flux du fichier vers le programme
@@ -43,25 +46,13 @@ public class LanceurAnnuaire {
 			System.out.println(stagiaire);
 			}
 	
-			
-//			/*fr.read() retourne un entier
-//			cet entier c'est l'unicode du caract�re lu*/
-//			int caractereLu = 0;
-//			String texteLu = "";
-//			
-//			//caract�reLu = -1 => fin du fichier donc fin du while
-//			while((caractereLu = fr.read()) != -1 ) {
-//				texteLu += (char) caractereLu;
-//			}
-//			
-//			System.out.println(texteLu);
-//			
-			//fermeture des flux
 			br.close();
 			fr.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		
 			
 
 	}
