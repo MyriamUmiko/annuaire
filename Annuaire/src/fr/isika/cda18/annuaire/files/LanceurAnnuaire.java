@@ -12,13 +12,19 @@ import fr.isika.cda18.annuaire.model.Stagiaire;
 
 public class LanceurAnnuaire {
 
-
+//test
 	
 	public static void main(String[] args) {
 		List<Stagiaire> listeStagiaire=new ArrayList<>();
+
+
 		Noeud arbreBinaire = new Noeud(null);
 		
+
 		// stocker les données dans une liste
+
+		//stocker les données dans la liste - pour la lecture du fichier STAGIAIRE.DON
+
 		try {
 			
 			//ouvre un flux du fichier vers le programme
@@ -40,16 +46,24 @@ public class LanceurAnnuaire {
 				
 			}
 		
+
 //			for(Stagiaire stagiaire:listeStagiaire) {
 //			System.out.println(stagiaire);
 //			}
 	
 			//fermeture des flux
+
+			for(Stagiaire stagiaire:listeStagiaire) {
+			System.out.println(stagiaire);
+			}
+	
+
 			br.close();
 			fr.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
 		// Affichage de l'ABR suivant le parcours infixe
 	for (Stagiaire stagiaire : listeStagiaire) {
 		arbreBinaire.ajouterValeur(stagiaire);
@@ -59,6 +73,12 @@ public class LanceurAnnuaire {
 //	System.out.println("------------------------------------------");
 	arbreBinaire.nombreTotalDesNoeuds(arbreBinaire);
 	System.out.println(arbreBinaire.nombreTotalDesNoeuds(arbreBinaire));
+
+		
+		
+			
+
+
 	}
 		
 }
