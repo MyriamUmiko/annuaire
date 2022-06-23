@@ -7,9 +7,9 @@ import java.io.IOException;
 public class Stagiaire extends Personne {
 
 	// Attributes
-	private String departement;
-	private String nomPromo;
-	private String anneePromo;
+	protected String departement;
+	protected String nomPromo;
+	protected String anneePromo;
 	
 	//Constructor
 	public Stagiaire(String nom, String prenom, String departement, String nomPromo, String anneePromo) {
@@ -51,12 +51,6 @@ public class Stagiaire extends Personne {
 		this.anneePromo = anneePromo;
 	}
 
-	//Method toString
-//	@Override
-//	public String toString() {
-//		return "Stagiaire[departement=" + departement + ", nomPromo=" + nomPromo + ", anneePromo=" + anneePromo + "]";
-//		
-//	}
 	@Override
 	public String toString() {
 		return  super.toString()+ " " + departement + " " + nomPromo + " " + anneePromo ;

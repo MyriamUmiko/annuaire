@@ -36,7 +36,6 @@ public abstract class Personne {
 	}
 
 
-
 	//Methods ToString 
 
 	@Override
