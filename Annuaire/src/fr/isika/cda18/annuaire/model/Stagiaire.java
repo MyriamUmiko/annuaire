@@ -7,25 +7,27 @@ import java.io.IOException;
 public class Stagiaire extends Personne {
 
 	// Attributes
-	private int departement;
+	private String departement;
 	private String nomPromo;
-	private int anneePromo;
+	private String anneePromo;
 	
 	//Constructor
-	public Stagiaire(String nom, String prenom, int departement, String nomPromo, int anneePromo) {
+	public Stagiaire(String nom, String prenom, String departement, String nomPromo, String anneePromo) {
 		super(nom, prenom);
 		this.departement = departement;
 		this.nomPromo = nomPromo;
 		this.anneePromo = anneePromo;
 	}
 
+
+
 	//Getters && Setters
-	public int getDepartement() {
+	public String getDepartement() {
 		return departement;
 	}
 
 
-	public void setDepartement(int departement) {
+	public void setDepartement(String departement) {
 		this.departement = departement;
 	}
 
@@ -40,21 +42,26 @@ public class Stagiaire extends Personne {
 	}
 
 
-	public int getAnneePromo() {
+	public String getAnneePromo() {
 		return anneePromo;
 	}
 
 
-	public void setAnneePromo(int anneePromo) {
+	public void setAnneePromo(String anneePromo) {
 		this.anneePromo = anneePromo;
 	}
 
 	//Method toString
+//	@Override
+//	public String toString() {
+//		return "Stagiaire[departement=" + departement + ", nomPromo=" + nomPromo + ", anneePromo=" + anneePromo + "]";
+//		
+//	}
 	@Override
 	public String toString() {
-		return "Stagiaire [departement=" + departement + ", nomPromo=" + nomPromo + ", anneePromo=" + anneePromo + "]";
+		return  super.toString()+ " " + departement + " " + nomPromo + " " + anneePromo ;
 	}
-	
+
 
 	
 

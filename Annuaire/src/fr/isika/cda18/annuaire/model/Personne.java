@@ -41,7 +41,7 @@ public abstract class Personne {
 
 	@Override
 	public String toString() {
-		return "Personne [nom=" + nom + ", prenom=" + prenom + "]";
+		return  nom +"  "+ prenom+" ";
 	}
 	
 		
