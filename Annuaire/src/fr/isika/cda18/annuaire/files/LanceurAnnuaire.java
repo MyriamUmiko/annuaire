@@ -11,7 +11,7 @@ import fr.isika.cda18.annuaire.model.Stagiaire;
 
 public class LanceurAnnuaire {
 
-
+//test
 	
 	public static void main(String[] args) {
 		List<Stagiaire> listeStagiaire=new ArrayList<>();
