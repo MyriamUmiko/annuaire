@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.isika.cda18.annuaire.model.ArbreBinaire;
 import fr.isika.cda18.annuaire.model.Noeud;
 import fr.isika.cda18.annuaire.model.Stagiaire;
 
@@ -16,10 +17,9 @@ public class LanceurAnnuaire {
 	
 	public static void main(String[] args) {
 		List<Stagiaire> listeStagiaire=new ArrayList<>();
-
-
-		Noeud arbreBinaire = new Noeud(null);
 		
+
+		ArbreBinaire arbreBinaire = new ArbreBinaire();
 
 		// stocker les données dans une liste
 
@@ -53,10 +53,10 @@ public class LanceurAnnuaire {
 	
 			//fermeture des flux
 
-			for(Stagiaire stagiaire:listeStagiaire) {
-			System.out.println(stagiaire);
-			}
-	
+//			for(Stagiaire stagiaire:listeStagiaire) {
+//			System.out.println(stagiaire);
+//			}
+//	
 
 			br.close();
 			fr.close();
@@ -64,15 +64,18 @@ public class LanceurAnnuaire {
 			e.printStackTrace();
 		}
 
-		// Affichage de l'ABR suivant le parcours infixe
+	// Affichage de l'ABR 
 	for (Stagiaire stagiaire : listeStagiaire) {
-		arbreBinaire.ajouterValeur(stagiaire);
+		arbreBinaire.ajouterNoeud(new Noeud(stagiaire));
 	}
-	System.out.println(listeStagiaire.size());
-//	System.out.println(arbreBinaire.toStringInfixe());
+	
+	System.out.println("----------------");
+//	System.out.println(listeStagiaire.size());
+	//System.out.println(arbreBinaire);
+	System.out.println(arbreBinaire.parcoursInfixe() );
 //	System.out.println("------------------------------------------");
-	arbreBinaire.nombreTotalDesNoeuds(arbreBinaire);
-	System.out.println(arbreBinaire.nombreTotalDesNoeuds(arbreBinaire));
+//	arbreBinaire.nombreTotalDesNoeuds(arbreBinaire);
+//	System.out.println(arbreBinaire.nombreTotalDesNoeuds(arbreBinaire));
 
 		
 		

@@ -13,7 +13,7 @@ public class Noeud {
 		this.filsGauche = null;
 		this.filsDroit = null;
 	}
-	// Setter and
+	// Setter and Getter
 
 	public Stagiaire getStagiaire() {
 		return stagiaire;
@@ -39,6 +39,7 @@ public class Noeud {
 		this.filsDroit = filsDroit;
 	}
 
+	
 	public String toStringInfixe() {
 		String result = "";
 		if (this.filsGauche != null) {
@@ -51,24 +52,23 @@ public class Noeud {
 		return result;
 	}
 
-	public void ajouterValeur(Stagiaire stagiaireAAjouter) {
-		if(this.stagiaire==null) {
-			this.stagiaire=stagiaireAAjouter;
-		}else if (this.stagiaire.getNom().compareTo(stagiaireAAjouter.getNom())> 0) {
+	public void ajouterValeur(Noeud stagiaireAAjouter) {
+            if (this.stagiaire.getNom().compareTo(stagiaireAAjouter.getStagiaire().getNom())> 0) {
 			if (this.filsGauche == null) {
-				this.filsGauche = new Noeud(stagiaireAAjouter);
+				this.filsGauche = stagiaireAAjouter;
 			} else {
 				this.filsGauche.ajouterValeur(stagiaireAAjouter);
 			}
 		} else {
 			if (this.filsDroit == null) {
-				this.filsDroit = new Noeud(stagiaireAAjouter);
+				this.filsDroit = stagiaireAAjouter;
 			} else {
 				this.filsDroit.ajouterValeur(stagiaireAAjouter);
 			}
 		}
 	}
 
+	
 	public int nombreTotalDesNoeuds(Noeud noeud) {
 		
 		if (noeud == null) {
@@ -76,47 +76,9 @@ public class Noeud {
 		} else {
 			return 1+nombreTotalDesNoeuds(noeud.filsDroit)+nombreTotalDesNoeuds(noeud.filsGauche);
 		}
-		
+	
 	}
 
-
-
-
-	
-
-	
-	
-	//méthode toString
-	@Override
-	public String toString() {
-		String result="";
-		if(this.filsGauche != null) {
-			result +=this.filsGauche.toString();
-		}
-		result += " "+ stagiaire;
-		
-		if(this.filsDroit != null) {
-			result += this.filsDroit.toString();
-		}
-		
-		return result;
-	}
-	
-	
-	//nombre de noeuds
-	public int nombreNoeuds(Noeud nbNoeuds) {
-
-		if (nbNoeuds == null) {
-			return 0;
-
-//		if ((this.filsGauche == null) && (this.filsDroit==null)) {
-//			return 0;
-		} else {
-			return 1 + nombreNoeuds(nbNoeuds.filsDroit) + nombreNoeuds(nbNoeuds.filsGauche);
-		}
-
-	}
-	
 	
 }
 
